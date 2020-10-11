@@ -1,0 +1,1 @@
+initSidebarItems({"fn":[["amount_coins","Fill a change matrix for a desired amount using dynmaic programming"],["change_making_matrix","Generate a change matrix for dynamic programming"],["make_change","Make change"]],"type":[["ChangeMatrix",""]]});

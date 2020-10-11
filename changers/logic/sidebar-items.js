@@ -1,0 +1,1 @@
+initSidebarItems({"enum":[["LogicError","Custom error type for logic errors"]],"fn":[["make_change","Make change"]],"mod":[["change",""],["coins",""],["decimals",""],["err",""]]});

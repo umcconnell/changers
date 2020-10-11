@@ -1,0 +1,1 @@
+initSidebarItems({"fn":[["longest_coin","Find the longest coin with the most decimal places in a vector of coins"],["normalize","Normalize a vector of coins"],["normalize_coins","Normalize a vector of coins by multiplying every coin with a given factor."]]});
