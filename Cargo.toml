@@ -1,0 +1,17 @@
+[package]
+name = "changers"
+version = "1.0.0"
+authors = ["Ulysse McConnell <ulysse.mcconnell+dev@protonmail.com>"]
+edition = "2018"
+description = "Make change in Rust"
+repository = "https://github.com/umcconnell/changers/"
+license = "MIT OR Apache-2.0"
+
+
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+
+[badges]
+github = { repository = "umcconnell/changers" }
