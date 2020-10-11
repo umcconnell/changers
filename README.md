@@ -1,5 +1,5 @@
-![Test](https://github.com/umcconnell/changers/workflows/Test/badge.svg)
-![Docs](https://github.com/umcconnell/changers/workflows/Docs/badge.svg)
+![Test](https://github.com/umcconnell/changers/workflows/test/badge.svg)
+![Docs](https://github.com/umcconnell/changers/workflows/docs/badge.svg)
 
 # change\.rs
 
