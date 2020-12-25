@@ -1,4 +1,5 @@
 ![Test](https://github.com/umcconnell/changers/workflows/test/badge.svg)
+![Lint](https://github.com/umcconnell/changers/workflows/lint/badge.svg)
 ![Docs](https://github.com/umcconnell/changers/workflows/docs/badge.svg)
 
 # change\.rs
