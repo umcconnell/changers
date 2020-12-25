@@ -101,9 +101,9 @@ pub fn make_change(n: f64, coins: Vec<f64>) -> Result<HashMap<String, i32>, Logi
 
         if col.is_some() && (m[i][col.unwrap() as usize] == m[i][nn as usize] - 1) {
             *result.entry(coins[i - 1].to_string()).or_insert(0) += 1;
-            nn = nn - ncoins[i - 1];
+            nn -= ncoins[i - 1];
         } else if i > 1 {
-            i = i - 1;
+            i -= 1;
         } else {
             return Err(LogicError::Unreachable(
                 "Amount cannot be reached with the given set of coins",
