@@ -7,16 +7,11 @@ type ChangeMatrix = Vec<Vec<i32>>;
 
 /// Generate a change matrix for dynamic programming
 fn change_making_matrix(n: u32, num_coins: usize) -> ChangeMatrix {
-    let mut m = Vec::new();
     let width = n as usize + 1;
-
-    for _ in 0..(num_coins + 1) {
-        let mut row = Vec::new();
-        for _ in 0..(width) {
-            row.push(0);
-        }
-        m.push(row);
-    }
+    let mut m = vec![
+        vec![0;width];
+        num_coins+1
+    ];
 
     for i in 1..(width) {
         m[0][i] = i32::MAX;
