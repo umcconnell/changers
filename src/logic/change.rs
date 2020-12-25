@@ -21,7 +21,7 @@ fn change_making_matrix(n: u32, num_coins: usize) -> ChangeMatrix {
 }
 
 /// Fill a change matrix for a desired amount using dynmaic programming
-fn amount_coins(n: u32, coins: &Vec<u32>) -> ChangeMatrix {
+fn amount_coins(n: u32, coins: &[u32]) -> ChangeMatrix {
     let mut m = change_making_matrix(n, coins.len());
     let width = n as usize + 1;
 

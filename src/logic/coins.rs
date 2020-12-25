@@ -2,12 +2,12 @@ use super::decimals::precision;
 use super::LogicError;
 
 /// Find the longest coin with the most decimal places in a vector of coins
-fn longest_coin(coins: &Vec<f64>) -> u32 {
+fn longest_coin(coins: &[f64]) -> u32 {
     coins.iter().map(|x| precision(*x).unwrap()).max().unwrap()
 }
 
 /// Normalize a vector of coins by multiplying every coin with a given factor.
-fn normalize_coins(coins: &Vec<f64>, factor: f64) -> Vec<u32> {
+fn normalize_coins(coins: &[f64], factor: f64) -> Vec<u32> {
     coins.iter().map(|x| (*x * factor).round() as u32).collect()
 }
 
@@ -27,7 +27,7 @@ fn normalize_coins(coins: &Vec<f64>, factor: f64) -> Vec<u32> {
 ///
 /// assert!(normalize(n, &coins).is_err())
 /// ```
-pub fn normalize(n: f64, coins: &Vec<f64>) -> Result<(u32, Vec<u32>), LogicError> {
+pub fn normalize(n: f64, coins: &[f64]) -> Result<(u32, Vec<u32>), LogicError> {
     let coins_factor = longest_coin(coins);
     let n_factor = precision(n).unwrap();
 
