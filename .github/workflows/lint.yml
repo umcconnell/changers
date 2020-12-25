@@ -1,4 +1,4 @@
-name: test
+name: lint
 
 on:
     push:
@@ -9,11 +9,11 @@ on:
             - main
 
 jobs:
-    test:
+    lint:
         runs-on: ubuntu-latest
         steps:
             - uses: actions/checkout@v2
 
-            - name: Cargo test
-              run: cargo test
+            - name: Clippy
+              run: cargo clippy
 
