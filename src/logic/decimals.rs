@@ -28,8 +28,10 @@ fn round(n: f64, precision: u32) -> f64 {
 /// assert_eq!(precision(n), 2);
 /// ```
 pub fn precision(x: f64) -> Option<u32> {
+    let error_margin = f64::EPSILON;
+    
     for digits in 0..std::f64::DIGITS {
-        if round(x, digits) == x {
+        if (round(x, digits) - x).abs() < error_margin {
             return Some(digits);
         }
     }
