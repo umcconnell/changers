@@ -33,23 +33,11 @@ impl Config {
         args.next();
 
         // Amount
-        let amount = match args.next() {
-            Some(arg) => arg,
-            None => {
-                return Err(CliError::Args(
-                    "Didn't get an amount to make change for.",
-                ))
-            }
-        };
-
-        let amount = match amount.parse::<f64>() {
-            Ok(val) => val,
-            Err(_) => {
-                return Err(CliError::Args(
-                    "Can't parse amount to make change for.",
-                ))
-            }
-        };
+        let amount = args
+            .next()
+            .ok_or(CliError::Args("Didn't get an amount to make change for."))?
+            .parse::<f64>()
+            .or(Err(CliError::Args("Can't parse amount to make change for.")))?;
 
         // Coins file -> empty if using stdin
         let coins_file = args.next();
