@@ -8,10 +8,7 @@ type ChangeMatrix = Vec<Vec<i32>>;
 /// Generate a change matrix for dynamic programming
 fn change_making_matrix(n: u32, num_coins: usize) -> ChangeMatrix {
     let width = n as usize + 1;
-    let mut m = vec![
-        vec![0;width];
-        num_coins+1
-    ];
+    let mut m = vec![vec![0; width]; num_coins + 1];
 
     for i in 1..(width) {
         m[0][i] = i32::MAX;
@@ -80,7 +77,10 @@ fn amount_coins(n: u32, coins: &[u32]) -> ChangeMatrix {
 ///     "Amount cannot be reached with the given set of coins"
 /// )
 /// ```
-pub fn make_change(n: f64, coins: Vec<f64>) -> Result<HashMap<String, i32>, LogicError> {
+pub fn make_change(
+    n: f64,
+    coins: Vec<f64>,
+) -> Result<HashMap<String, i32>, LogicError> {
     let (mut nn, ncoins) = normalize(n, &coins)?;
 
     let mut i = coins.len();
@@ -94,7 +94,9 @@ pub fn make_change(n: f64, coins: Vec<f64>) -> Result<HashMap<String, i32>, Logi
     while nn != 0 && i > 0 {
         let col = nn.checked_sub(ncoins[i - 1]);
 
-        if col.is_some() && (m[i][col.unwrap() as usize] == m[i][nn as usize] - 1) {
+        if col.is_some()
+            && (m[i][col.unwrap() as usize] == m[i][nn as usize] - 1)
+        {
             *result.entry(coins[i - 1].to_string()).or_insert(0) += 1;
             nn -= ncoins[i - 1];
         } else if i > 1 {

@@ -14,10 +14,11 @@ fn main() {
         process::exit(1);
     });
 
-    let change = logic::make_change(config.amount, coins).unwrap_or_else(|err| {
-        eprintln!("{}", err);
-        process::exit(1);
-    });
+    let change =
+        logic::make_change(config.amount, coins).unwrap_or_else(|err| {
+            eprintln!("{}", err);
+            process::exit(1);
+        });
 
     let mut change = change
         .iter()

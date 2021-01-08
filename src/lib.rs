@@ -8,15 +8,15 @@
 //! Change.rs provides an easy-to-use CLI (command line interface) to calculate
 //! change directly from the command line. Supports ouputing to `stdout` for
 //! results and `stderr` for possible errors.
-//! 
+//!
 //! ## Usage
-//! 
+//!
 //! ```bash
 //! changers [amount] [optional: coin_file]
 //! ```
-//! 
+//!
 //! The change\.rs CLI accepts two arguments to calculate change:
-//! 
+//!
 //! -   `amount`: The monetary amount to make change for
 //! -   `coin_file`, optional: An optional coin file (see [examples](examples/)
 //!     folder) containing a list of coins seperated by a newline. If no file is
