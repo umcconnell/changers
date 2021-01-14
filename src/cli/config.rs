@@ -15,8 +15,8 @@ impl Config {
     ///
     /// # Errors
     ///
-    /// Returns a [CliError](enum.CliError.html) when invalid arguments are
-    /// passed or values cannot be parsed.
+    /// Returns a [CliError] when invalid arguments are passed or values cannot
+    /// be parsed.
     ///
     /// No amount specified:
     /// ```bash
@@ -37,7 +37,9 @@ impl Config {
             .next()
             .ok_or(CliError::Args("Didn't get an amount to make change for."))?
             .parse::<f64>()
-            .or(Err(CliError::Args("Can't parse amount to make change for.")))?;
+            .or(Err(CliError::Args(
+                "Can't parse amount to make change for.",
+            )))?;
 
         // Coins file -> empty if using stdin
         let coins_file = args.next();
@@ -53,7 +55,7 @@ impl Config {
     /// # Errors
     ///
     /// If no coins can be read, either because only junk was present or no
-    /// coins were specified, a [CliError](enum.CliError.html) will be returned.
+    /// coins were specified, a [CliError] will be returned.
     pub fn get_coins(&self) -> Result<Vec<f64>, CliError> {
         // Read from stdin if no coins_file
         let coins = match &self.coins_file {

@@ -18,8 +18,8 @@ fn normalize_coins(coins: &[f64], factor: f64) -> Vec<u32> {
 ///
 /// # Errors
 ///
-/// Returns a [LogicError::Unreachable](enum.LogicError.html) if the precision
-/// of the desired amount is greater than the precision of the longest coin.
+/// Returns a [LogicError::Unreachable] if the precision of the desired amount
+/// is greater than the precision of the longest coin.
 ///
 /// ```ignore
 /// let n: f64 = 3.5;

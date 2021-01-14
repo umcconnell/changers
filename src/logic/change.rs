@@ -46,8 +46,8 @@ fn amount_coins(n: u32, coins: &[u32]) -> ChangeMatrix {
 ///
 /// # Errors
 ///
-/// Returns a [LogicError::Unreachable](enum.LogicError.html) when the desired
-/// amount cannot by reached using the given coins.
+/// Returns a [LogicError::Unreachable] when the desired amount cannot by
+/// reached using the given coins.
 ///
 /// # Examples
 ///
